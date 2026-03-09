@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Modern Design with Gradient */}
+      {/* Hero Section - Content shifted to right */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Parallax */}
         <div className="absolute inset-0">
@@ -47,9 +47,9 @@ const Home = () => {
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        {/* Content */}
+        {/* Content - Shifted to right with margins */}
         <div className="relative container mx-auto px-4 z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl ml-auto md:ml-[10%] lg:ml-[15%] xl:ml-[20%]">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
