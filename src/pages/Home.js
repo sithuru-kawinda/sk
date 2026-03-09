@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Content shifted to right */}
+      {/* Hero Section - Modern Design with Gradient */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Parallax */}
         <div className="absolute inset-0">
@@ -47,9 +47,9 @@ const Home = () => {
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        {/* Content - Shifted to right with margins */}
+        {/* Content */}
         <div className="relative container mx-auto px-4 z-10">
-          <div className="max-w-4xl ml-auto md:ml-[10%] lg:ml-[15%] xl:ml-[20%]">
+          <div className="max-w-4xl">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -200,101 +200,88 @@ const Home = () => {
         </div>
       </section>
 
-     {/* About Section - Modern Layout */}
-<section className="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-    <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
-      
-      {/* Left Content - මුලින්ම display වෙන්නේ mobile එකේ */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="lg:w-1/2 order-2 lg:order-1"
-      >
-        <h6 className="text-orange-500 font-bold text-base sm:text-lg mb-2">
-          ABOUT US
-        </h6>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-white mb-4 sm:mb-6">
-          Welcome to <span className="text-orange-500">Sri Lanka Tours</span>
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg mb-6">
-          We are passionate about creating unforgettable travel experiences in Sri Lanka. 
-          With years of expertise and local knowledge, we ensure every journey is special.
-        </p>
-        
-        {/* Features List - Responsive grid එකක් හදලා */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
-          {[
-            'Expert local guides with deep knowledge',
-            'Customized itineraries for your preferences',
-            'Best price guarantee & transparent pricing',
-            '24/7 customer support during your trip'
-          ].map((item, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <FaShieldAlt className="text-white text-[10px] sm:text-xs" />
+      {/* About Section - Modern Layout */}
+      <section className="py-24 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2"
+            >
+              <h6 className="text-orange-500 font-bold text-lg mb-2">ABOUT US</h6>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-white mb-6">
+                Welcome to <span className="text-orange-500">Sri Lanka Tours</span>
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                We are passionate about creating unforgettable travel experiences in Sri Lanka. 
+                With years of expertise and local knowledge, we ensure every journey is special.
+              </p>
+              
+              {/* Features List */}
+              <div className="space-y-4 mb-8">
+                {[
+                  'Expert local guides with deep knowledge',
+                  'Customized itineraries for your preferences',
+                  'Best price guarantee & transparent pricing',
+                  '24/7 customer support during your trip'
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                      <FaShieldAlt className="text-white text-xs" />
+                    </div>
+                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                  </div>
+                ))}
               </div>
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
 
-        {/* Button - Full width on mobile, auto on larger screens */}
-        <div className="flex justify-center sm:justify-start">
-          <Link 
-            to="/destinations" 
-            className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-900 to-blue-800 dark:from-blue-700 dark:to-blue-600 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all hover:scale-105 hover:shadow-2xl w-full sm:w-auto"
-          >
-            Discover More
-            <FaChevronRight className="group-hover:translate-x-1 transition-transform text-sm sm:text-base" />
-          </Link>
-        </div>
-      </motion.div>
+              <Link 
+                to="/destinations" 
+                className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-900 to-blue-800 dark:from-blue-700 dark:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all hover:scale-105 hover:shadow-2xl"
+              >
+                Discover More
+                <FaChevronRight className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
 
-      {/* Right Content - Image with Stats - Mobile එකේ උඩින් display වෙන්න */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="lg:w-1/2 order-1 lg:order-2 w-full"
-      >
-        <div className="relative max-w-md mx-auto lg:max-w-none">
-          {/* Image Container - Aspect ratio එක fix කරලා */}
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-            <div className="aspect-[4/3] sm:aspect-[16/12] lg:aspect-[4/3] w-full">
-              <img 
-                src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweq5AXFkecKJEhX5JTkq93X-3V5MNXwwauCfi5AUt4ZORBKXWofbbQ8_SpPvA2OBqE7t4O_Ek-wShCLgFmhQ_3NN5PsvuTmRfncik38uR8_fsm7nTd85FVeyIvvqq3PmTOXTXZY9=w675-h390-n-k-no" 
-                alt="Sri Lanka"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* Right Content - Image with Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2 relative"
+            >
+              <div className="relative">
+                <img 
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweq5AXFkecKJEhX5JTkq93X-3V5MNXwwauCfi5AUt4ZORBKXWofbbQ8_SpPvA2OBqE7t4O_Ek-wShCLgFmhQ_3NN5PsvuTmRfncik38uR8_fsm7nTd85FVeyIvvqq3PmTOXTXZY9=w675-h390-n-k-no" 
+                  alt="Sri Lanka"
+                  className="rounded-3xl shadow-2xl"
+                />
+                
+                {/* Floating Card */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-xl"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                      <FaHeart className="text-orange-500 text-xl" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-blue-900 dark:text-white">15+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">Years Experience</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
-          
-          {/* Floating Card - Position adjust for mobile */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="absolute -bottom-4 sm:-bottom-6 left-2 sm:-left-6 bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl"
-          >
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
-                <FaHeart className="text-orange-500 text-base sm:text-xl" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-blue-900 dark:text-white">15+</div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Years Experience</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Popular Destinations - Modern Grid */}
       <section className="py-24 bg-gray-50 dark:bg-gray-800">
